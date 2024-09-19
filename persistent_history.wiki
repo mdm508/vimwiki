@@ -1,0 +1,12 @@
+== Questions ==
+1. How,where and when should the widget setup persistent history?
+2. Is it required for the main app to communicate to the widget that it needs to
+   refresh? Or will the widget refresh on its own whenever PS changes.
+3. Suppose the widget does get notified about a change...how does it know a)
+   what word to render b) if it even needs to render.
+4. Currently I only care if the user presses the button that the widget updates.
+   So, can i basically ignore the schedule
+ 
+ 
+ 
+

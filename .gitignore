@@ -1,0 +1,9 @@
+*.swp
+*.swo
+*.swn
+*.un~
+Session.vim
+.DS_Store
+*.lock
+*.log
+
