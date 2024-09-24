@@ -1,6 +1,82 @@
 Here is a script that can start a recording with ffmpeg and ahk
 
-
 `
+#SingleInstance, Force ; Ensure only one instance is running
+SetTitleMatchMode, 2 ; Allow partial matching of window titles
+DetectHiddenWindows, On ; Required for minimizing the window
+
+global FFmpegPID := "" ; Declare global variable for FFmpeg PID
+global recordingsPath := "C:\Users\metta\Music\Recordings" ; Global variable for recordings path
+global ankiMediaPathBase := "C:\Users\metta\AppData\Roaming\Anki2\Ye qiu\collection.media\" ; Base path for Anki media
+
+;******************** Control+Shift+R = Start Recording ***********************************
+^+r:: ; Ctrl + Shift + R
+    FileDelete, %A_ScriptDir%\temp.mp3
+    Sleep, 50
+
+    ; FFmpeg parameters to record audio into an MP3 file
+    ff_params := "-f dshow -i audio=""virtual-audio-capturer"" -acodec libmp3lame -filter:a ""volume=1.5"" temp.mp3"
+
+    ; Run FFmpeg with the specified parameters
+    Run, ffmpeg %ff_params%, %A_ScriptDir%, , FFmpegPID
+    Sleep, 150 ; Wait for the command window to appear
+return
+
+;******************** Function to Stop Recording ***********************************
+StopRecording(customName := "") {
+    ; Wait for the console window to exist with the specified class
+    WinWait, ahk_class CASCADIA_HOSTING_WINDOW_CLASS
+    ; Activate the console window
+    WinActivate, ahk_class CASCADIA_HOSTING_WINDOW_CLASS
+    WinWaitActive, ahk_class CASCADIA_HOSTING_WINDOW_CLASS ; Ensure it is active
+
+    ; Send the 'q' key to stop FFmpeg
+    Send, q
+    ; Wait for a moment to ensure the command is processed
+    Sleep, 500
+
+    ; Determine the filename based on user input or timestamp
+    if (customName = "") {
+        FormatTime, timestamp, , yyyyMMdd_HHmmss
+        filename := "cp_" . timestamp . ".mp3" ; Auto-name using timestamp
+    } else {
+        filename := customName . ".mp3" ; Use custom name
+    }
+
+    filepath := recordingsPath . filename ; Construct the full file path
+
+    ; Move temp.mp3 to the desired location with the new filename
+    FileMove, %A_ScriptDir%\temp.mp3, %filepath%
+
+    ; Copy the file to the Anki media folder
+    ankiMediaPath := ankiMediaPathBase . filename
+    FileCopy, %filepath%, %ankiMediaPath%
+
+    ; Format the path for Anki
+    formattedPath := "[sound:" . filename . "]"
+
+    ; Copy the formatted path to the clipboard
+    Clipboard := formattedPath
+
+    ; Optionally show a message indicating the file has been copied
+    Run, %filepath% ; Optionally play the new audio file
+return
+}
+
+;******************** Ctrl+Shift+S = Stop Recording with Auto Naming ***********************************
+^+s:: ; Ctrl + Shift + S
+    StopRecording() ; Call function without parameters for auto naming
+return
+
+;******************** Alt+Shift+S = Stop Recording with Prompt ***********************************
+!^+s:: ; Alt + Shift + S
+    ; Prompt for the new filename
+    InputBox, New_File_Name, File Name, Enter the filename for the MP3 (without extension):, , 300, 130
+    if (New_File_Name = "") ; If no name was entered, return
+        return
+
+    StopRecording(New_File_Name) ; Call function with the custom filename
+return
+
 
 
