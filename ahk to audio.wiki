@@ -1,6 +1,6 @@
 Here is a script that can start a recording with ffmpeg and ahk
 
-```
+{{{
 #SingleInstance, Force ; Ensure only one instance is running
 SetTitleMatchMode, 2 ; Allow partial matching of window titles
 DetectHiddenWindows, On ; Required for minimizing the window
@@ -77,6 +77,5 @@ return
 
     StopRecording(New_File_Name) ; Call function with the custom filename
 return
-```
-
+}}}
 
