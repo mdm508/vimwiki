@@ -1,4 +1,4 @@
-# Welcome to my vimwiki
+# Welcome to the wiki
 
 [[waabl]]
 [[ahk to audio]]
