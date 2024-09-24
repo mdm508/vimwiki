@@ -1,1 +1,6 @@
+Here is a script that can start a recording with ffmpeg and ahk
+
+
+`
+
 
