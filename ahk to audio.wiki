@@ -21,9 +21,8 @@ guess.
  
 Well here is the fruits of my labor. Plum jam.  
 
-<audio controls src="../static/plum-jam.mp3"></audio>
-
-[[local:./static/plum-jam.mp3|download plum jam]]
+<audio controls src="./plum-jam.mp3"></audio>
+[[local:./plum-jam.mp3|download plum jam]]
 
 == Purpose ==
 To start recording computer audio use the following hot keys
