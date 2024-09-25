@@ -1,5 +1,4 @@
-# Welcome to the wiki
+# Welcome
 [[waabl]]
 [[ahk to audio]]
-[[hello]]
 
