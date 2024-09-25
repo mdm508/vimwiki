@@ -1,4 +1,19 @@
-Here is a script that can start a recording with ffmpeg and ahk
+The purpose of this auto hot key script is to use ffmpeg to record audo
+snippets.
+
+I made this so that I could listen to chinese audio on youtube, record a sample
+of it, then paste that sample into an anki card. It all started when I was
+trying to come up with an example for 醬. My mind immediately went to that song 
+[[https://www.youtube.com/watch?v=IKMaaO9QtKw | 烏梅子醬]]. I thought this would
+be a really quick script to write....It wasn't. It then sent into motion a chain
+of related tasks such as 
+- [X] Setting up vim wiki for publishing to github (so i could post this script
+      in the event my computer goes down)
+- [X] Making autopublish commands to let me publish to gitub pages.
+- [X] Writting this explanation
+
+ Looking back it seems like an aggressive waste of time. 
+ Its just another [[bench]]. 
 
 {{{
 #SingleInstance, Force ; Ensure only one instance is running
