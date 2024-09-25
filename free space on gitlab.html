@@ -19,9 +19,11 @@ my git history. Here is how to do that safely.
 git checkout --orphan new-branch
 git add -A
 git commit -m "Initial commit"
-git branch -D main  # or master
-git branch -m main  # or master
-git push -f origin main  # or master
+git branch -D master
+git branch -m master
+git push -f origin master
+"you might also need this"
+git push --set-upstream origin master
 
 </pre>
 
