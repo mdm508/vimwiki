@@ -1,3 +1,5 @@
+= 烏梅子醬 =
+
 The purpose of this auto hot key script is to use ffmpeg to record audo
 snippets.
 
@@ -9,11 +11,38 @@ be a really quick script to write....It wasn't. It then sent into motion a chain
 of related tasks such as 
 - [X] Setting up vim wiki for publishing to github (so i could post this script
       in the event my computer goes down)
-- [X] Making autopublish commands to let me publish to gitub pages.
-- [X] Writting this explanation
+- [X] Making autopublish commands that lets me easily push changes to the wiki
+      to git. 
+- [X] Writting this explanation.
+- [X] Figuring out how to include audio files in vim wiki.
 
- Looking back it seems like an aggressive waste of time. 
- Its just another [[bench]]. 
+It may have all been an aggressive waste of time.  Its just another [[bench]] I
+guess. 
+ 
+Well here is the fruits of my labor. Plum jam.  
+
+<audio controls src="../static/plum-jam.mp3"></audio>
+
+[[local:./static/plum-jam.mp3|download plum jam]]
+
+== Purpose ==
+To start recording computer audio use the following hot keys
+
+| start recording                               | CTRL + SHIFT + R        |
+| stop recording using current time as filename | CTRL + SHIFT + S        |
+| stop giving a custom name                     | CTRL + SHIFHT + ALT + S |
+ 
+- Recording are saved to both `recordingPath` and `ankiMediaBasePath`
+- The anki filename will be copied to the clipboard making it easy to paste into
+  cards.
+- It will record <i>all</i> audio being output from your computer. You can probably tweak
+  this.
+  
+
+== Dependencies ==
+- ffmpeg
+- [[https://github.com/rdp/virtual-audio-capture-grabber-device | audio capture grabber]]
+- Auto hot key
 
 {{{
 #SingleInstance, Force ; Ensure only one instance is running
@@ -21,8 +50,8 @@ SetTitleMatchMode, 2 ; Allow partial matching of window titles
 DetectHiddenWindows, On ; Required for minimizing the window
 
 global FFmpegPID := "" ; Declare global variable for FFmpeg PID
-global recordingsPath := "C:\Users\metta\Music\Recordings" ; Global variable for recordings path
-global ankiMediaPathBase := "C:\Users\metta\AppData\Roaming\Anki2\Ye qiu\collection.media\" ; Base path for Anki media
+global recordingsPath :=  {{ANOTHER_LOCAL_PATH_TO_SAVE_AUDIO}}
+global ankiMediaPathBase := {{YOUR_PATH_TO_ANKI_COLLECTIONS_DOT_MEDIA}}
 
 ;******************** Control+Shift+R = Start Recording ***********************************
 ^+r:: ; Ctrl + Shift + R
@@ -78,13 +107,13 @@ StopRecording(customName := "") {
 return
 }
 
-;******************** Ctrl+Shift+S = Stop Recording with Auto Naming ***********************************
+; Recording without prompt. Use current time as filename
 ^+s:: ; Ctrl + Shift + S
     StopRecording() ; Call function without parameters for auto naming
 return
 
-;******************** Alt+Shift+S = Stop Recording with Prompt ***********************************
-!^+s:: ; Alt + Shift + S
+; Recording with a prompt to choose filename
+!^+s:: ; Alt + Shift + Ctrl + S
     ; Prompt for the new filename
     InputBox, New_File_Name, File Name, Enter the filename for the MP3 (without extension):, , 300, 130
     if (New_File_Name = "") ; If no name was entered, return

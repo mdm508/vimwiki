@@ -9,6 +9,8 @@
 </head>
 <body>
 
+<div id="烏梅子醬"><h1 id="烏梅子醬" class="header"><a href="#烏梅子醬">烏梅子醬</a></h1></div>
+
 <p>
 The purpose of this auto hot key script is to use ffmpeg to record audo
 snippets.
@@ -28,20 +30,98 @@ Setting up vim wiki for publishing to github (so i could post this script
       in the event my computer goes down)
 
 <li class="done4">
-Making autopublish commands to let me publish to gitub pages.
+Making autopublish commands that lets me easily push changes to the wiki
+      to git. 
 
 <li class="done4">
-Writting this explanation
- Looking back it seems like an aggressive waste of time. 
- Its just another <a href="bench.html">bench</a>. 
+Writting this explanation.
+
+<li class="done4">
+Figuring out how to include audio files in vim wiki.
+
+</ul>
+<p>
+It may have all been an aggressive waste of time.  Its just another <a href="bench.html">bench</a> I
+guess. 
+</p>
+ 
+<p>
+Well here is the fruits of my labor. Plum jam.  
+</p>
+
+<p>
+<audio controls src="../static/plum-jam.mp3"></audio>
+</p>
+
+<p>
+<a href="../static/plum-jam.mp3">download plum jam</a>
+</p>
+
+<div id="烏梅子醬-Purpose"><h2 id="Purpose" class="header"><a href="#烏梅子醬-Purpose">Purpose</a></h2></div>
+<p>
+To start recording computer audio use the following hot keys
+</p>
+
+<table>
+<tr>
+<td>
+start recording
+</td>
+<td>
+CTRL + SHIFT + R
+</td>
+</tr>
+<tr>
+<td>
+stop recording using current time as filename
+</td>
+<td>
+CTRL + SHIFT + S
+</td>
+</tr>
+<tr>
+<td>
+stop giving a custom name
+</td>
+<td>
+CTRL + SHIFHT + ALT + S
+</td>
+</tr>
+</table>
+ 
+<ul>
+<li>
+Recording are saved to both <code>recordingPath</code> and <code>ankiMediaBasePath</code>
+
+<li>
+The anki filename will be copied to the clipboard making it easy to paste into
+  cards.
+
+<li>
+It will record <i>all</i> audio being output from your computer. You can probably tweak
+  this.
+
+</ul>
+  
+
+<div id="烏梅子醬-Dependencies"><h2 id="Dependencies" class="header"><a href="#烏梅子醬-Dependencies">Dependencies</a></h2></div>
+<ul>
+<li>
+ffmpeg
+
+<li>
+<a href="https://github.com/rdp/virtual-audio-capture-grabber-device ">audio capture grabber</a>
+
+<li>
+Auto hot key
 <pre>
 #SingleInstance, Force ; Ensure only one instance is running
 SetTitleMatchMode, 2 ; Allow partial matching of window titles
 DetectHiddenWindows, On ; Required for minimizing the window
 
 global FFmpegPID := "" ; Declare global variable for FFmpeg PID
-global recordingsPath := "C:\Users\metta\Music\Recordings" ; Global variable for recordings path
-global ankiMediaPathBase := "C:\Users\metta\AppData\Roaming\Anki2\Ye qiu\collection.media\" ; Base path for Anki media
+global recordingsPath :=  {{ANOTHER_LOCAL_PATH_TO_SAVE_AUDIO}}
+global ankiMediaPathBase := {{YOUR_PATH_TO_ANKI_COLLECTIONS_DOT_MEDIA}}
 
 ;******************** Control+Shift+R = Start Recording ***********************************
 ^+r:: ; Ctrl + Shift + R
@@ -97,13 +177,13 @@ StopRecording(customName := "") {
 return
 }
 
-;******************** Ctrl+Shift+S = Stop Recording with Auto Naming ***********************************
+; Recording without prompt. Use current time as filename
 ^+s:: ; Ctrl + Shift + S
     StopRecording() ; Call function without parameters for auto naming
 return
 
-;******************** Alt+Shift+S = Stop Recording with Prompt ***********************************
-!^+s:: ; Alt + Shift + S
+; Recording with a prompt to choose filename
+!^+s:: ; Alt + Shift + Ctrl + S
     ; Prompt for the new filename
     InputBox, New_File_Name, File Name, Enter the filename for the MP3 (without extension):, , 300, 130
     if (New_File_Name = "") ; If no name was entered, return
