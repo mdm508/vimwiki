@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="Stylesheet" type="text/css" href="style.css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
+<title>free space on gitlab</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<p>
+Every once and a while my Supermemo collection gets to big and I have to delete
+my git history. Here is how to do that safely. 
+</p>
+
+<pre>
+
+git checkout --orphan new-branch
+git add -A
+git commit -m "Initial commit"
+git branch -D main  # or master
+git branch -m main  # or master
+git push -f origin main  # or master
+
+</pre>
+
+<p>
+What is happening here is we make a temporary branch of most recent commit.
+Delete the old branch which contains history. then make the temp branch our main
+branch.
+</p>
+
+<p>
+the key command to making the temporary branch is
+</p>
+
+<p>
+<code>git checkout --orphan new-branch</code> which makes a new branch without any commit
+history.
+</p>
+
+</body>
+</html>

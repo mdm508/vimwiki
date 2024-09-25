@@ -1,0 +1,22 @@
+Every once and a while my Supermemo collection gets to big and I have to delete
+my git history. Here is how to do that safely. 
+
+{{{
+
+git checkout --orphan new-branch
+git add -A
+git commit -m "Initial commit"
+git branch -D main  # or master
+git branch -m main  # or master
+git push -f origin main  # or master
+
+}}}
+
+What is happening here is we make a temporary branch of most recent commit.
+Delete the old branch which contains history. then make the temp branch our main
+branch.
+
+the key command to making the temporary branch is
+
+`git checkout --orphan new-branch` which makes a new branch without any commit
+history.
