@@ -4,6 +4,10 @@
 [[free space on gitlab]]
 [[quiet]]
 
+[[favorite_talks]]
+
+[[random-memories]]
 == Ideas for later ==
 [[idea_trans_subs|Transcribe with context]]
+
 
