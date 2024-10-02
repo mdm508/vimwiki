@@ -1,0 +1,27 @@
+= Language helper =
+I love learning languages from videos...but i am dissatisfied with the available
+tools on the market. 
+
+== Whats your real goal? ==
+Well the only reason I want a tool like [[idea_trans_subs | transcribe substitles]] is because I am tired of the
+limitations of tools like migaku or language reactor  where you need soft subs to [[sentence_mining|sentence mine]]
+Such tools are also limited to specific platforms like youtube or netflix. You
+need to write plugins for any video source. 
+
+Besides that, the subs often don't match what the speaker is saying, which can
+be difficult if your new to the language.
+
+I'd love it if you could 
+a) accurately match what the speaker was saying
+b) for any video that you can run on your computer
+c) have ai give explanations and suggestions based on the entire context of what
+   it has learned from the video.
+
+== Real time rather than all at once ==
+I want to have a tool thats use as needed. Each translation will also be
+expensive in terms of the AI analyzing it. This might be okay for learners who
+plan to spend a long time reading a single subtitle anyway. 
+
+== Windows ==
+How much of the video should the AI take into consideration when providing
+suggestions? 

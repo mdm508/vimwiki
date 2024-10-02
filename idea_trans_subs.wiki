@@ -1,0 +1,62 @@
+= Realtime contextual video subtitle transcriber =
+Objective: Take videos and write their subtitles in real time using as much
+information as possible.
+
+I noticed Whisper by open AI  only takes into consideration audio to do do its
+transcriptions. What if we also used other information present in the video to
+improve the accuracy of our transcription. 
+
+
+[[language helper | My Real goal]]
+
+I want a tool that works with any video source in real time and can provide
+accurate 
+
+
+== Analyze video screen shots for context  ==
+Use object recognition to analyze the screenshot to understand the current
+setting of the video which can provide relevant contextuals clues about
+what words are most likely. For example, suppose the video takes place in
+a kitchen and it identifies a glass. Even if the speaker at some point
+slurs the word glass so it sounds more like 'klass', given that we take
+the objects in the room into consideration, we can realize that they most
+likely said 'glass'. I believe this is called [[topic modeling]]
+
+== Soft subs ==
+If soft subs exist you can use them to inform the model. They should generally
+be accurate as to the meaning of the speaker. But they are not assumed to be
+correct. Use them to improve accuracy for cases such as 
+- speaker's speech is completly different than the sub but meaning is the same
+- speech and sub similar but not exactly the same.
+- almost exactly the same but there are errors. 
+  
+== Audio ==
+Using Whisper we can transcribe the audio for a sentence. 
+
+
+== What if hard coded subs exist ==
+when subtitles exist but they are hard coded we can OCR the screen shot.
+Whatever text appears in that line has a good chance of being correct so
+we at that point would just be validating it using our other sources such
+as audio and screen shots.
+
+why so much confidence? I have noticed hard subs tend to exactly match what the
+speaker said. They were most likely human made.
+
+== Video agnostic ==
+you can use this tool wherever there is a video and audio stream
+
+
+== How do you know if you should be analying ==
+we need a way to determine quickly if the current portion of the video has any
+audio
+
+=== Make the user deal with it ===
+not crazy about this soulution but we could just make the user set starrt and
+end point and have the video analyze that portion only
+
+== Auto detect speech ==
+the model can quickly detect is someonce talking. if so, it can automatically
+analyze. yeah sounds great but probably difficuctl in practice
+
+

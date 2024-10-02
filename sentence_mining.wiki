@@ -1,0 +1,6 @@
+= Sentence mining =
+A language learning technique where you 'mine' for interesting sentences that
+are appropriate for your level. You save them somewhere to review later. The
+sentences are mined from a larger body of work that contains many sentences you
+either don't care about or are too difficult. The idea is to mine the ones that
+are good for you.

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="Stylesheet" type="text/css" href="style.css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
+<title>idea_trans_subs</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div id="Realtime contextual video subtitle transcriber"><h1 id="Realtime contextual video subtitle transcriber" class="header"><a href="#Realtime contextual video subtitle transcriber">Realtime contextual video subtitle transcriber</a></h1></div>
+<p>
+Objective: Take videos and write their subtitles in real time using as much
+information as possible.
+</p>
+
+<p>
+I noticed Whisper by open AI  only takes into consideration audio to do do its
+transcriptions. What if we also used other information present in the video to
+improve the accuracy of our transcription. 
+</p>
+
+
+<p>
+<a href="language helper .html">My Real goal</a>
+</p>
+
+<p>
+I want a tool that works with any video source in real time and can provide
+accurate 
+</p>
+
+
+<div id="Realtime contextual video subtitle transcriber-Analyze video screen shots for context"><h2 id="Analyze video screen shots for context" class="header"><a href="#Realtime contextual video subtitle transcriber-Analyze video screen shots for context">Analyze video screen shots for context</a></h2></div>
+<p>
+Use object recognition to analyze the screenshot to understand the current
+setting of the video which can provide relevant contextuals clues about
+what words are most likely. For example, suppose the video takes place in
+a kitchen and it identifies a glass. Even if the speaker at some point
+slurs the word glass so it sounds more like 'klass', given that we take
+the objects in the room into consideration, we can realize that they most
+likely said 'glass'. I believe this is called <a href="topic modeling.html">topic modeling</a>
+</p>
+
+<div id="Realtime contextual video subtitle transcriber-Soft subs"><h2 id="Soft subs" class="header"><a href="#Realtime contextual video subtitle transcriber-Soft subs">Soft subs</a></h2></div>
+<p>
+If soft subs exist you can use them to inform the model. They should generally
+be accurate as to the meaning of the speaker. But they are not assumed to be
+correct. Use them to improve accuracy for cases such as 
+</p>
+<ul>
+<li>
+speaker's speech is completly different than the sub but meaning is the same
+
+<li>
+speech and sub similar but not exactly the same.
+
+<li>
+almost exactly the same but there are errors. 
+
+</ul>
+  
+<div id="Realtime contextual video subtitle transcriber-Audio"><h2 id="Audio" class="header"><a href="#Realtime contextual video subtitle transcriber-Audio">Audio</a></h2></div>
+<p>
+Using Whisper we can transcribe the audio for a sentence. 
+</p>
+
+
+<div id="Realtime contextual video subtitle transcriber-What if hard coded subs exist"><h2 id="What if hard coded subs exist" class="header"><a href="#Realtime contextual video subtitle transcriber-What if hard coded subs exist">What if hard coded subs exist</a></h2></div>
+<p>
+when subtitles exist but they are hard coded we can OCR the screen shot.
+Whatever text appears in that line has a good chance of being correct so
+we at that point would just be validating it using our other sources such
+as audio and screen shots.
+</p>
+
+<p>
+why so much confidence? I have noticed hard subs tend to exactly match what the
+speaker said. They were most likely human made.
+</p>
+
+<div id="Realtime contextual video subtitle transcriber-Video agnostic"><h2 id="Video agnostic" class="header"><a href="#Realtime contextual video subtitle transcriber-Video agnostic">Video agnostic</a></h2></div>
+<p>
+you can use this tool wherever there is a video and audio stream
+</p>
+
+
+<div id="Realtime contextual video subtitle transcriber-How do you know if you should be analying"><h2 id="How do you know if you should be analying" class="header"><a href="#Realtime contextual video subtitle transcriber-How do you know if you should be analying">How do you know if you should be analying</a></h2></div>
+<p>
+we need a way to determine quickly if the current portion of the video has any
+audio
+</p>
+
+<div id="Realtime contextual video subtitle transcriber-How do you know if you should be analying-Make the user deal with it"><h3 id="Make the user deal with it" class="header"><a href="#Realtime contextual video subtitle transcriber-How do you know if you should be analying-Make the user deal with it">Make the user deal with it</a></h3></div>
+<p>
+not crazy about this soulution but we could just make the user set starrt and
+end point and have the video analyze that portion only
+</p>
+
+<div id="Realtime contextual video subtitle transcriber-Auto detect speech"><h2 id="Auto detect speech" class="header"><a href="#Realtime contextual video subtitle transcriber-Auto detect speech">Auto detect speech</a></h2></div>
+<p>
+the model can quickly detect is someonce talking. if so, it can automatically
+analyze. yeah sounds great but probably difficuctl in practice
+</p>
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+Discover topics in text then use them to predict what other words are likely to
+appear. 
+
+
+
+
+== Sources ==
+1. [[https://en.wikipedia.org/wiki/Topic_model | wiki topic modeling]]
