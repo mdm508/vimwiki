@@ -1,0 +1,5 @@
+You chug the coffee and spill some on your shirt.
+It is delicious but now your wearing some of it. 
+
+[[change-your-shirt]]
+[[embrace-the-coffee-stain]]

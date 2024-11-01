@@ -1,0 +1,5 @@
+You go to your room and open your dresser. 
+
+[[red-shirt]]
+[[blue-shirt]]
+[[?-shirt]]

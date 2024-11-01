@@ -1,0 +1,6 @@
+Monday morning. Cold and fresh air. 
+You are standing at the front door. 
+
+[[open-it]]
+[[a]]
+[[a]]

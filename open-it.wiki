@@ -1,0 +1,8 @@
+Standing barefoot on cold red bricks. 
+You rest you hands on the metal rail
+and look to the street. No one is out.
+It is far too early. Even for dog walkers.
+
+[[go-back-to-bed]]
+[[wait]]
+[[make-coffee]]

@@ -14,3 +14,5 @@
 [[chinese-resources]]
 
 [[chinese-saved]]
+
+[[maze]]

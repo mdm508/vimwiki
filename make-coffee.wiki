@@ -1,0 +1,7 @@
+The smell of beans freshly ground fills the kitchen.
+You brew a pot of coffee. Enough to get you through 
+the whole day. 
+
+[[add-milk-and-sugar]]
+[[drink]]
+[[wait-for-the-coffee-to-cool]]

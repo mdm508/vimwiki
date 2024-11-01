@@ -1,0 +1,5 @@
+You add some sugar and milk. The coffee temperature
+has gone down.
+
+[[taste]]
+[[add-more-sugar]]
