@@ -1,0 +1,81 @@
+[[https://developer.apple.com/library/archive/documentation/Xcode/Reference/xcode_markup_formatting_ref/Attention.html#//apple_ref/doc/uid/TP40016497-CH29-SW1|Markup Formatting Reference]]
+[[https://developer.apple.com/library/archive/documentation/Xcode/Reference/xcode_markup_formatting_ref/SymbolDocumentation.html#//apple_ref/doc/uid/TP40016497-CH51-SW5| Formatting Reference: Formatting Quick Help]]
+[[https://developer.apple.com/library/archive/documentation/Xcode/Reference/xcode_markup_formatting_ref/index.html#//apple_ref/doc/uid/TP40016497-CH2-SW1|MarkupFormatting Reference: Markup Overview]]
+
+Callouts are useful for documenting your swift code. 
+
+Here is a full example that you can paste into xcode.
+{{{
+
+/**
+ Refills a cup of coffee.
+
+ - Parameters:
+   - cup: The cup that needs more coffee.
+   - amount: The amount of coffee to pour in ounces.
+ - Returns: The updated cup after it has been refilled.
+ - Throws: An error if there is not enough coffee left in the pot.
+ - Precondition: `amount` must be greater than 0.
+ - Postcondition: The returned cup contains more coffee than before, unless it was already full.
+ */
+func refill(_ cup: CoffeeCup, with amount: Double) throws -> CoffeeCup {
+    precondition(amount > 0, "Amount must be greater than 0.")
+
+    // implementation
+}
+
+}}}
+ 
+
+
+Inside a comment you can use the following syntax which results in formatted Quick Help.
+
+{{{ 
+    * | + | - Attention: description
+    optional continuation of description
+}}}
+
+
+
+/**
+  An example of using the attention field
+ 
+  - Attention: What I if told you
+  you read this line wrong?
+ */
+ 
+}}}
+
+== Matt's top callouts ==
+1. Attention
+2. Note
+3. Precondition
+4. Postcondition
+5. Warning
+6. Example
+7. Complexity
+8. ToDo
+
+== All Valid Callout Names ==
+Attention
+Author
+Authors
+Bug
+Complexity
+Copyright
+Custom Callout
+Date
+Example
+Experiment
+Important
+Invariant
+Note
+Precondition
+Postcondition
+Remark
+Requires
+See Also
+Since
+Version
+Warning
+ 

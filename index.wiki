@@ -1,4 +1,7 @@
 == Articles ==
+[[swift-doc-language]]
+
+[[vim-situations]]
 [[waabl]]
 [[ahk to audio]]
 [[free space on gitlab]]
