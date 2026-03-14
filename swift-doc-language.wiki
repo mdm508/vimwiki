@@ -47,17 +47,7 @@ Inside a comment you can use the following syntax which results in formatted Qui
     * | + | - Attention: description
     optional continuation of description
 }}}
-
-
-
-/**
-  An example of using the attention field
- 
-  - Attention: What I if told you
-  you read this line wrong?
- */
- 
-}}}
+G
 
 == Matt's top callouts ==
 1. Attention
@@ -69,6 +59,72 @@ Inside a comment you can use the following syntax which results in formatted Qui
 7. Complexity
 8. ToDo
 
+== A snippet ==
+If you don't want to have to type out all of this manually every time you can take advantage of snippets in xcode. Here is a really detailed one I came up.
+I assigned this snippet to `doc` so when I type that in Xcode it automatically inserts this massive block and lets me tab
+through the different sections.
+{{{
+  /**
+ <#What this does, why it exists, and any important context a reader should know.#>
+
+ - Parameters:
+   - <#param1#>: <#What this parameter represents.#>
+   - <#param2#>: <#What this parameter represents.#>
+
+ - Returns:
+   <#What value or effect this produces.#>
+
+ - Invariant:
+   <#What always remains true, if applicable.#>
+
+ - Precondition:
+   <#What must be true before use, if applicable.#>
+
+ - Postcondition:
+   <#What is guaranteed after use, if applicable.#>
+
+ - Note:
+   <#Any non-obvious design choice, caveat, or implementation detail.#>
+
+ - See Also:
+   <#Related symbol, if useful.#>
+ */   
+}}}
+     
+     
+Shorter version bound to `dsh`
+
+{{{
+/**
+ <#What this does and why it exists.#>
+ */
+ }}}
+ 
+ For Variables bound to `dvr`
+ 
+ {{{
+ /**
+ <#What this property represents and why it exists.#>
+ - Invariant:
+   <#What is always true about this property, if applicable.#>
+ */
+ }}}
+ 
+ For Todo items bound to `tos`
+ 
+` // TODO: <#What still needs to be done.#> `
+
+For longer Todo itmes bound to `tom`
+
+{{{
+/**
+ - TODO: <#What still needs to be done.#>
+   <#Optional continuation with more detail, constraints, or context.#>
+ */
+ }}}
+ 
+ 
+ 
 == All Valid Callout Names ==
 Attention
 Author

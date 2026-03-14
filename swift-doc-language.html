@@ -81,22 +81,8 @@ Inside a comment you can use the following syntax which results in formatted Qui
     * | + | - Attention: description
     optional continuation of description
 </pre>
-
-
-
 <p>
-/**
-  An example of using the attention field
-</p>
- 
-<p>
-  - Attention: What I if told you
-  you read this line wrong?
- */
-</p>
- 
-<p>
-}}}
+G
 </p>
 
 <div id="How to mark up a swift file-Matt's top callouts"><h2 id="Matt's top callouts" class="header"><a href="#How to mark up a swift file-Matt's top callouts">Matt's top callouts</a></h2></div>
@@ -126,6 +112,84 @@ Complexity
 ToDo
 
 </ol>
+<div id="How to mark up a swift file-A snippet"><h2 id="A snippet" class="header"><a href="#How to mark up a swift file-A snippet">A snippet</a></h2></div>
+<p>
+If you don't want to have to type out all of this manually every time you can take advantage of snippets in xcode. Here is a really detailed one I came up.
+I assigned this snippet to <code>doc</code> so when I type that in Xcode it automatically inserts this massive block and lets me tab
+through the different sections.
+</p>
+<pre>
+  /**
+ &lt;#What this does, why it exists, and any important context a reader should know.#&gt;
+
+ - Parameters:
+   - &lt;#param1#&gt;: &lt;#What this parameter represents.#&gt;
+   - &lt;#param2#&gt;: &lt;#What this parameter represents.#&gt;
+
+ - Returns:
+   &lt;#What value or effect this produces.#&gt;
+
+ - Invariant:
+   &lt;#What always remains true, if applicable.#&gt;
+
+ - Precondition:
+   &lt;#What must be true before use, if applicable.#&gt;
+
+ - Postcondition:
+   &lt;#What is guaranteed after use, if applicable.#&gt;
+
+ - Note:
+   &lt;#Any non-obvious design choice, caveat, or implementation detail.#&gt;
+
+ - See Also:
+   &lt;#Related symbol, if useful.#&gt;
+ */   
+</pre>
+<pre><code>
+</code></pre>
+<p>
+Shorter version bound to <code>dsh</code>
+</p>
+
+<pre>
+/**
+ &lt;#What this does and why it exists.#&gt;
+ */
+</pre>
+ 
+<p>
+ For Variables bound to <code>dvr</code>
+</p>
+ 
+<pre>
+ /**
+ &lt;#What this property represents and why it exists.#&gt;
+ - Invariant:
+   &lt;#What is always true about this property, if applicable.#&gt;
+ */
+</pre>
+ 
+<p>
+ For Todo items bound to <code>tos</code>
+</p>
+ 
+<p>
+<code> // TODO: &lt;#What still needs to be done.#&gt; </code>
+</p>
+
+<p>
+For longer Todo itmes bound to <code>tom</code>
+</p>
+
+<pre>
+/**
+ - TODO: &lt;#What still needs to be done.#&gt;
+   &lt;#Optional continuation with more detail, constraints, or context.#&gt;
+ */
+</pre>
+ 
+ 
+ 
 <div id="How to mark up a swift file-All Valid Callout Names"><h2 id="All Valid Callout Names" class="header"><a href="#How to mark up a swift file-All Valid Callout Names">All Valid Callout Names</a></h2></div>
 <p>
 Attention
