@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="Stylesheet" type="text/css" href="style.css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
+<title>How to change default screenshot location on mac</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<p>
+I hate how screenshots clutter up my desktop. Here is how to change the default location of screenshots.
+</p>
+
+<pre>
+defaults read com.apple.screencapture
+defaults write com.apple.screencapture location ~/Screenshots
+defaults write com.apple.screencapture type png
+</pre>
+
+<p>
+running random code you found on the internet is never a good idea.
+</p>
+
+<dl>
+<dt>defaults</dt>
+<dd>macOS is a command-line tool for reading and writting user preferences.</dd>
+</dl>
+
+<dl>
+<dt>com.apple.screencapture</dt>
+<dd>reverse-DNS. So if you owned <code>lovescats.com</code> you can invert it so you have <code>com.lovecats.</code> and use it as a namespace. The screencapture part is the subsystem we are interested in. You could have also said 'finder' or 'safari' for example.</dd>
+</dl>
+
+</body>
+</html>

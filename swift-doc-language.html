@@ -9,19 +9,28 @@
 </head>
 <body>
 
+<div id="How to mark up a swift file"><h1 id="How to mark up a swift file" class="header"><a href="#How to mark up a swift file">How to mark up a swift file</a></h1></div>
+<div id="How to mark up a swift file-References"><h2 id="References" class="header"><a href="#How to mark up a swift file-References">References</a></h2></div>
 <p>
+Most everything here is stolen from the following sources. I am just trying to consolidate the information I acutally use so I can stop having to dig around these pages.
 <a href="https://developer.apple.com/library/archive/documentation/Xcode/Reference/xcode_markup_formatting_ref/Attention.html#//apple_ref/doc/uid/TP40016497-CH29-SW1">Markup Formatting Reference</a>
 <a href="https://developer.apple.com/library/archive/documentation/Xcode/Reference/xcode_markup_formatting_ref/SymbolDocumentation.html#//apple_ref/doc/uid/TP40016497-CH51-SW5">Formatting Reference: Formatting Quick Help</a>
 <a href="https://developer.apple.com/library/archive/documentation/Xcode/Reference/xcode_markup_formatting_ref/index.html#//apple_ref/doc/uid/TP40016497-CH2-SW1">MarkupFormatting Reference: Markup Overview</a>
 </p>
 
-<p>
-Callouts are useful for documenting your swift code. 
-</p>
 
 <p>
-Here is a full example that you can paste into xcode.
+Marking up your functions makes them look profesh inside Xcode. You should know about these three sections:
 </p>
+<ol>
+<li>
+Parameters
+
+<li>
+Returns
+
+<li>
+Thows
 <pre>
 
 /**
@@ -34,17 +43,36 @@ Here is a full example that you can paste into xcode.
  - Throws: An error if there is not enough coffee left in the pot.
  - Precondition: `amount` must be greater than 0.
  - Postcondition: The returned cup contains more coffee than before, unless it was already full.
+ - Invariant: During refilling, the amount of coffee in the cup never exceeds the cup’s maximum capacity.
+
  */
 func refill(_ cup: CoffeeCup, with amount: Double) throws -&gt; CoffeeCup {
     precondition(amount &gt; 0, "Amount must be greater than 0.")
-
     // implementation
 }
-
 </pre>
+
+</ol>
  
+<ul>
+<li>
+<code>- cup:</code> will appear as a parameter inside the parameter section along with <code>- amount: </code>.
 
+</ul>
+<p>
+After the <code>Throws</code> section you can specify a general description as well as call outs that 
+will appear inside that description.
+</p>
 
+<p>
+And then you put it all together and it looks a little something like this
+</p>
+
+<p>
+<img src="res/refill.png" />
+</p>
+
+<div id="How to mark up a swift file-General Syntax for Callouts"><h2 id="General Syntax for Callouts" class="header"><a href="#How to mark up a swift file-General Syntax for Callouts">General Syntax for Callouts</a></h2></div>
 <p>
 Inside a comment you can use the following syntax which results in formatted Quick Help.
 </p>
@@ -71,7 +99,7 @@ Inside a comment you can use the following syntax which results in formatted Qui
 }}}
 </p>
 
-<div id="Matt's top callouts"><h2 id="Matt's top callouts" class="header"><a href="#Matt's top callouts">Matt's top callouts</a></h2></div>
+<div id="How to mark up a swift file-Matt's top callouts"><h2 id="Matt's top callouts" class="header"><a href="#How to mark up a swift file-Matt's top callouts">Matt's top callouts</a></h2></div>
 <ol>
 <li>
 Attention
@@ -98,7 +126,7 @@ Complexity
 ToDo
 
 </ol>
-<div id="All Valid Callout Names"><h2 id="All Valid Callout Names" class="header"><a href="#All Valid Callout Names">All Valid Callout Names</a></h2></div>
+<div id="How to mark up a swift file-All Valid Callout Names"><h2 id="All Valid Callout Names" class="header"><a href="#How to mark up a swift file-All Valid Callout Names">All Valid Callout Names</a></h2></div>
 <p>
 Attention
 Author

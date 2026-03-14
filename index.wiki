@@ -1,21 +1,17 @@
 == Articles ==
 [[swift-doc-language]]
 
-[[vim-situations]]
-[[waabl]]
-[[ahk to audio]]
-[[free space on gitlab]]
-[[quiet]]
-[[favorite_talks]]
-[[random-memories]]
-[[idea_trans_subs|Transcribe with context]]
+[[How to change default screenshot location on mac]]
 
-[[unfamiliar-chinese]]
 
-[[1000-book-]]
 
-[[chinese-resources]]
 
-[[chinese-saved]]
 
-[[maze]]
+
+
+
+
+[[infrequent]]
+
+
+

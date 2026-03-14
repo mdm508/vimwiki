@@ -1,10 +1,15 @@
+= How to mark up a swift file =
+== References == 
+Most everything here is stolen from the following sources. I am just trying to consolidate the information I acutally use so I can stop having to dig around these pages.
 [[https://developer.apple.com/library/archive/documentation/Xcode/Reference/xcode_markup_formatting_ref/Attention.html#//apple_ref/doc/uid/TP40016497-CH29-SW1|Markup Formatting Reference]]
 [[https://developer.apple.com/library/archive/documentation/Xcode/Reference/xcode_markup_formatting_ref/SymbolDocumentation.html#//apple_ref/doc/uid/TP40016497-CH51-SW5| Formatting Reference: Formatting Quick Help]]
 [[https://developer.apple.com/library/archive/documentation/Xcode/Reference/xcode_markup_formatting_ref/index.html#//apple_ref/doc/uid/TP40016497-CH2-SW1|MarkupFormatting Reference: Markup Overview]]
 
-Callouts are useful for documenting your swift code. 
 
-Here is a full example that you can paste into xcode.
+Marking up your functions makes them look profesh inside Xcode. You should know about these three sections:
+1. Parameters
+2. Returns
+3. Thows
 {{{
 
 /**
@@ -17,17 +22,25 @@ Here is a full example that you can paste into xcode.
  - Throws: An error if there is not enough coffee left in the pot.
  - Precondition: `amount` must be greater than 0.
  - Postcondition: The returned cup contains more coffee than before, unless it was already full.
+ - Invariant: During refilling, the amount of coffee in the cup never exceeds the cup’s maximum capacity.
+
  */
 func refill(_ cup: CoffeeCup, with amount: Double) throws -> CoffeeCup {
     precondition(amount > 0, "Amount must be greater than 0.")
-
     // implementation
 }
-
 }}}
  
+- `- cup:` will appear as a parameter inside the parameter section along with `- amount: `.
 
+After the `Throws` section you can specify a general description as well as call outs that 
+will appear inside that description.
 
+And then you put it all together and it looks a little something like this
+
+{{/res/refill.png}}
+
+== General Syntax for Callouts == 
 Inside a comment you can use the following syntax which results in formatted Quick Help.
 
 {{{ 

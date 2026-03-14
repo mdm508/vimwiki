@@ -1,0 +1,16 @@
+I want to keep my main page reserved for articles that are more completed and actively used. Everything listed here is unfinished ideas and thoughts that I may and probably will, delete at some point. For now I am idea hoarding. 
+
+== Chinese == 
+[[chinese-resources]]
+[[chinese-saved]]
+[[unfamiliar-chinese]]
+
+== Lists ==
+
+
+== Misc == 
+[[ahk to audio]]
+[[free space on gitlab]]
+[[quiet]]
+[[random-memories]]
+[[idea_trans_subs|Transcribe with context]]

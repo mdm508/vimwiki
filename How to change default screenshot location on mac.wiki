@@ -1,0 +1,15 @@
+I hate how screenshots clutter up my desktop. Here is how to change the default location of screenshots.
+
+{{{
+defaults read com.apple.screencapture
+defaults write com.apple.screencapture location ~/Screenshots
+defaults write com.apple.screencapture type png
+}}}
+
+running random code you found on the internet is never a good idea.
+
+defaults:: macOS is a command-line tool for reading and writting user preferences.
+
+com.apple.screencapture:: reverse-DNS. So if you owned `lovescats.com` you can invert it so you have `com.lovecats.` and use it as a namespace. The screencapture part is the subsystem we are interested in. You could have also said 'finder' or 'safari' for example.
+
+

@@ -1,5 +1,0 @@
-I'm not planning this at all. Just an experiment of writting in a strange format. 
-
-[[a]]
-[[b]]
-[[c]]
