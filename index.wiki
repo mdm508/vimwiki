@@ -1,15 +1,15 @@
-== Articles ==
+== I love VimWiki ==
 [[swift-doc-language]]
 
 [[How to change default screenshot location on mac]]
 
+[[project-euler]]
 
+[[loop-invariants]]
 
+[[note-to-self]]
 
-
-
-
-
+{{/waabl.webp||class="center-img"}}
 
 [[infrequent]]
 

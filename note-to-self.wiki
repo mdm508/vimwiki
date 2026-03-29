@@ -1,0 +1,4 @@
+
+== Note(s) to self
+1. auto extract title `\wuu` pastes link
+2. "wiki links starting with "/" are considered to be absolute to the wiki root directory"

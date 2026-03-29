@@ -1,0 +1,5 @@
+= Loop Invariant Template =
+
+== Sources == 
+- [[https://www.eecs.yorku.ca/~jeff/courses/3101/Welcome.html|EECS3101]]
+- [[file:steps1.pdf|full loop invariant algorithms pdf download]]

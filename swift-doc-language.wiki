@@ -38,7 +38,7 @@ will appear inside that description.
 
 And then you put it all together and it looks a little something like this
 
-{{/res/refill.png}}
+{{/refill.png}}
 
 == General Syntax for Callouts == 
 Inside a comment you can use the following syntax which results in formatted Quick Help.
